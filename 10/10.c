@@ -3,18 +3,21 @@ int main(){
     FILE *fs;
     FILE *fd;
     char ch;
-    fs = fopen("intput.txt", "r");
+    fs = fopen("input.txt", "r");
     fd = fopen("output.txt", "w");
+ 
+    
     while(1) {
         ch = fgetc(fs);
         if (ch == EOF) {
             break;
         }
-        else {
-            fputc(ch, fd);
-        }
+        fputc(ch, fd);
     }
+    
     fclose(fs);
-    printf("Copied successfully!");
     fclose(fd);
+    printf("Copied successfully!");
+    
+    return 0;
 }
